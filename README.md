@@ -22,23 +22,44 @@ npm install -g @anthropic-ai/claude-code
 
 ### 2. 安装所需 Skill
 
-| Skill | 类型 | 用途 |
-|-------|------|------|
-| `math-modeling` | 自定义 skill | 建模手、编程手、论文手三阶段流程 |
-| `brainstorming` | superpower skill | 题目分析、方案探索 |
-| `writing-plans` | superpower skill | 制定实现计划 |
-| `subagent-driven-development` | superpower skill | 并行处理独立子问题 |
-| `nature-reviewer` | nature skill | 审稿人视角审查论文 |
-| `nature-figure` | nature skill | 图表质量检查 |
-| `stop-slop` | 自定义 skill | 去 AI 味检查和润色 |
+| Skill | 类型 | 用途 | 来源 |
+|-------|------|------|------|
+| `math-modeling` | 自定义 skill | 建模手、编程手、论文手三阶段流程 | [XiaoMaColtAI/math-modeling-skill](https://github.com/XiaoMaColtAI/math-modeling-skill) |
+| `brainstorming` | superpowers | 题目分析、方案探索 | [obra/superpowers](https://github.com/obra/superpowers) |
+| `writing-plans` | superpowers | 制定实现计划 | [obra/superpowers](https://github.com/obra/superpowers) |
+| `subagent-driven-development` | superpowers | 并行处理独立子问题 | [obra/superpowers](https://github.com/obra/superpowers) |
+| `nature-reviewer` | nature-skills | 审稿人视角审查论文 | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) |
+| `nature-figure` | nature-skills | 图表质量检查 | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) |
+| `stop-slop` | 自定义 skill | 去 AI 味检查和润色 | [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop) |
 
-将 skill 文件夹放到 `~/.claude/skills/` 目录下。
+克隆安装：
 
-### 3. 部署 Slash Command
+```bash
+# 数学建模 skill
+git clone https://github.com/XiaoMaColtAI/math-modeling-skill.git ~/.claude/skills/math-modeling
+
+# superpowers（含 brainstorming、writing-plans、subagent-driven-development）
+git clone https://github.com/obra/superpowers.git ~/.claude/skills/superpowers
+
+# nature skills（含 nature-reviewer、nature-figure）
+git clone https://github.com/Yuan1z0825/nature-skills.git ~/.claude/skills/nature-skills
+
+# stop-slop
+git clone https://github.com/hardikpandya/stop-slop.git ~/.claude/skills/stop-slop
+```
+
+### 3. 安装本项目
+
+```bash
+git clone https://github.com/Wzil23/Wzil-math-modeling-guide.git
+cd Wzil-math-modeling-guide
+```
+
+### 4. 部署 Slash Command
 
 按 `部署SlashCommand.md` 中的说明，将提示词文件部署为 Claude Code 的 slash command。
 
-### 4. 开始使用
+### 5. 开始使用
 
 ```
 /mmsetup    → 配置语言、格式、比赛类型
