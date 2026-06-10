@@ -4,20 +4,20 @@
 
 确保新电脑上已安装以下 skill：
 - `math-modeling`（含建模手、编程手、论文手的完整 references 目录）
-- `brainstorming`属于（superpower skill）
-- `writing-plans`属于（superpower skill）
-- `subagent-driven-development`属于（superpower skill）
-- `nature-reviewer`、`nature-figure`属于（nature skill）
+- `brainstorming`（superpower skill）
+- `writing-plans`（superpower skill）
+- `subagent-driven-development`（superpower skill）
+- `nature-reviewer`、`nature-figure`（nature skill）
 - `stop-slop`
 
 ## 部署步骤
 
-1. 把本文件夹的所有 .md 文件复制到新电脑的桌面
+1. 把 `ClaudeCode数学建模提示词` 文件夹复制到新电脑的桌面
 
 2. 将下面这段话发给 Claude Code：
 
 ```
-读取桌面上"数学建模提示词"文件夹里的以下 .md 文件，每个文件对应创建一个 slash command 到 ~/.claude/commands/ 目录下：
+读取桌面上"ClaudeCode数学建模提示词"文件夹里的以下 .md 文件，每个文件对应创建一个 slash command 到 ~/.claude/commands/ 目录下：
 
 - 00-快速设置.md → mmsetup.md
 - 01-准备工作.md → mmstep1.md
