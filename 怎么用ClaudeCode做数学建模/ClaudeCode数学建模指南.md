@@ -6,14 +6,43 @@
 
 ## 一、前置准备
 
-### 1.1 安装 Claude Code
+### 1.1 安装 Git
+
+```bash
+# Windows：从 https://git-scm.com/download/win 下载安装包
+# 安装时选择 "Use Git from the Windows Command Prompt"
+
+# macOS（Homebrew）
+brew install git
+
+# Linux
+sudo apt install git
+
+# 验证
+git --version
+```
+
+### 1.2 安装 Node.js（v18+）
+
+Claude Code 依赖 Node.js 运行时。
+
+```bash
+# 从 https://nodejs.org 下载 LTS 版本安装
+# Windows 下载 .msi 安装包，一路 Next
+# macOS 下载 .pkg 安装包
+
+# 验证
+node --version    # 应 >= v18
+npm --version
+```
+
+### 1.3 安装 Claude Code
 
 Claude Code 是 Anthropic 官方的命令行 AI 工具，支持终端、桌面应用、VS Code 插件等。
 
 **方式一：命令行安装（推荐）**
 
 ```bash
-# 需要先安装 Node.js（v18+）
 npm install -g @anthropic-ai/claude-code
 ```
 
@@ -25,17 +54,53 @@ npm install -g @anthropic-ai/claude-code
 
 在 VS Code 扩展商店搜索 "Claude Code" 安装。
 
-**首次启动：**
+**验证安装：**
 
 ```bash
-# 终端中运行
-claude
+claude --version
 ```
 
-首次使用需要登录 Anthropic 账号或配置 API Key。
-也可以通过安装CC-switch（`npm install -g cc-switch`），然后切换到国产 API（如 DeepSeek、MiMo 等）。
+### 1.4 配置 API
 
-### 1.2 安装所需 Skill
+首次使用需要配置 API，有两种方式：
+
+**方式一：Anthropic 官方账号**
+
+首次运行 `claude` 时按提示登录 Anthropic 账号即可。
+
+**方式二：使用国产 API（DeepSeek、MiMo 等）**
+
+如果无法使用 Anthropic 官方 API，可以通过 cc-switch 切换到国产 API：
+
+```bash
+# 安装 cc-switch
+npm install -g cc-switch
+
+# 添加 API 配置（以 DeepSeek 为例）
+cc-switch add deepseek \
+  --base-url https://api.deepseek.com/v1 \
+  --api-key YOUR_API_KEY \
+  --model deepseek-chat
+
+# 添加 MiMo API
+cc-switch add mimo \
+  --base-url https://api.mimo.com/v1 \
+  --api-key YOUR_API_KEY \
+  --model mimo-v2.5-pro
+
+# 切换到指定 API
+cc-switch use deepseek
+
+# 查看当前配置
+cc-switch current
+
+# 列出所有已配置的 API
+cc-switch list
+```
+
+切换后，Claude Code 会自动使用新的 API，无需修改其他配置。
+
+### 1.5 安装所需 Skill
 
 本流程依赖以下 skill，需要在 Claude Code 中安装：
 
@@ -51,7 +116,7 @@ claude
 
 安装方法：将 skill 文件夹放到 `~/.claude/skills/` 目录下。
 
-### 1.3 安装 Python 环境
+### 1.6 安装 Python 环境
 
 数学建模通常使用 Python，需要安装以下依赖：
 
@@ -66,7 +131,7 @@ pip install numpy pandas matplotlib scipy openpyxl
 python -c "import numpy, pandas, matplotlib, scipy, openpyxl; print('OK')"
 ```
 
-### 1.4 安装 LaTeX（可选，国赛可用 Word）
+### 1.7 安装 LaTeX（可选，国赛可用 Word）
 
 如果选择 LaTeX 格式：
 
@@ -82,7 +147,7 @@ python -c "import numpy, pandas, matplotlib, scipy, openpyxl; print('OK')"
 xelatex --version
 ```
 
-### 1.5 部署 Slash Command
+### 1.8 部署 Slash Command
 
 将"ClaudeCode数学建模提示词"文件夹中的 `.md` 文件部署为 Claude Code 的 slash command。
 
@@ -90,7 +155,7 @@ xelatex --version
 
 部署完成后，你将拥有以下命令：`/mmsetup`、`/mmstep1` 到 `/mmstep7`
 
-### 1.6 准备工作目录
+### 1.9 准备工作目录
 
 ```bash
 mkdir 数学建模项目
