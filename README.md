@@ -71,7 +71,7 @@ git clone https://github.com/hardikpandya/stop-slop.git ~/.claude/skills/stop-sl
 
 ## :open_book: 详细文档
 
-完整使用指南和各步骤说明见 **[ClaudeCode数学建模指南.md](ClaudeCode数学建模指南.md)**
+完整使用指南和各步骤说明见 **[ClaudeCode数学建模指南.md](怎么用ClaudeCode做数学建模/ClaudeCode数学建模指南.md)**
 
 ---
 
