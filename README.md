@@ -52,7 +52,7 @@ git clone https://github.com/hardikpandya/stop-slop.git ~/.claude/skills/stop-sl
 | :robot: **Claude Code** | Anthropic 官方命令行 AI 工具 |
 | :key: **API 配置** | Anthropic 账号 或 cc-switch 切换国产 API |
 | :snake: **Python** (3.10+) | 数学建模编程环境 |
-| :jigsaw: **Skill** (4个) | math-modeling、superpowers、nature-skills、stop-slop |
+| :jigsaw: **Skill** (4个仓库，含7个skill) | math-modeling、brainstorming、writing-plans、subagent-driven-development、nature-reviewer、nature-figure、stop-slop |
 | :hammer_and_wrench: **Slash Command** | 将提示词映射为斜杠命令 |
 | :page_facing_up: **LaTeX** (可选) | 美赛需要，国赛可用 Word 替代 |
 
